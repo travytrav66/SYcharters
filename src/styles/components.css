@@ -1553,3 +1553,34 @@
         grid-template-columns: 1fr 1fr;
     }
 }
+
+/* ── MOBILE BUTTONS — full-width & stacked ───────────────────── */
+@media (max-width: 640px) {
+    /* Notched filled buttons go full-width */
+    .notched-btn--filled-gold,
+    .notched-btn--filled-dark,
+    .notched-btn--filled-ivory {
+        display: block;
+        width: 100%;
+        text-align: center;
+    }
+
+    /* Outline button wrapper stretches to fill its flex cell */
+    .notched-btn-wrap {
+        display: block;
+        width: 100%;
+    }
+    .notched-btn--outline-gold,
+    .notched-btn--outline-ivory,
+    .notched-btn--outline-dark {
+        display: block;
+        width: 100%;
+        text-align: center;
+    }
+
+    /* Arrow-style .btn stretches and aligns left */
+    .btn {
+        display: flex;
+        width: 100%;
+    }
+}

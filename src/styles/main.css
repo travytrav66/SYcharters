@@ -1,0 +1,143 @@
+/* ============================================================
+   SY PRIVATE CHARTERS — Main Stylesheet
+   Ivory · Champagne · Linen · Gold · Charcoal
+   ============================================================ */
+
+@font-face {
+  font-family: 'Ws Paradose';
+  src: url('/fonts/WsParadose.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Ws Paradose';
+  src: url('/fonts/WsParadoseItalic.woff') format('woff');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* ============================================================
+   1. CUSTOM PROPERTIES
+   ============================================================ */
+:root {
+  --ivory: #FAF8F4;
+  --champagne: #F0E9D8;
+  --gold: #B5934A;
+  --gold-light: #D4B878;
+  --charcoal: #221E18;
+  --warm-mid: #7A7168;
+  --warm-light: #A89F94;
+  --serif: 'Ws Paradose', Georgia, serif;
+  --sans: 'Jost', sans-serif;
+
+  /* Layout */
+  --container:    1200px;
+  --container-sm: 860px;
+  --section-v:    clamp(5rem, 10vw, 9rem);
+  --gutter:       clamp(1.5rem, 5vw, 3rem);
+}
+
+/* ============================================================
+   2. RESET & BASE
+   ============================================================ */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--ivory);
+  color: var(--charcoal);
+  font-family: var(--sans);
+  font-weight: 300;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+/* Grain overlay */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9999;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+  opacity: 0.35;
+}
+
+/* ============================================================
+   3. LAYOUT — container + section utilities (mirrors pinkypour)
+   ============================================================ */
+
+/* Full-width section shell — vertical rhythm only */
+.section {
+  padding: var(--section-v) 0;
+  position: relative;
+}
+.section--sm { --section-v: clamp(3rem, 6vw, 5rem); }
+.section--lg { --section-v: clamp(7rem, 14vw, 12rem); }
+
+/* Centered content column with horizontal gutters */
+.container {
+  width: 100%;
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+}
+.container--sm { max-width: var(--container-sm); }
+
+@media (min-width: 1400px) {
+  :root { --container: 1340px; }
+}
+
+/* ============================================================
+   4. IMAGE PLACEHOLDER
+   ============================================================ */
+.img-placeholder {
+  background: var(--warm-mid);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.img-placeholder svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.img-placeholder span {
+  position: relative;
+  z-index: 1;
+  font-family: 'Courier New', monospace;
+  font-size: 10px;
+  color: var(--ivory);
+  letter-spacing: 0.05em;
+  text-align: center;
+  padding: 12px;
+  line-height: 1.6;
+}
+
+/* ============================================================
+   4. SCROLLBAR
+   ============================================================ */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: var(--ivory); }
+::-webkit-scrollbar-thumb { background: var(--gold-light); border-radius: 2px; }
+
+/* ============================================================
+   5. UTILITIES
+   ============================================================ */
+a { text-decoration: none; }
+button { cursor: pointer; }

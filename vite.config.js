@@ -4,7 +4,7 @@ import { resolve } from 'path'
 
 export default defineConfig({
   plugins: [react()],
-  base: '/charter/',
+  base: '/SYcharters/',
   build: {
     rollupOptions: {
       input: {

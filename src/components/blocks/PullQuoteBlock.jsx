@@ -5,7 +5,7 @@ import useReveal from "../../hooks/useReveal"
  * PullQuoteBlock — centered pull quote with optional dot-navigation slider.
  *
  * className modifiers:
- *   bg-ivory | bg-champagne | bg-gold | bg-charcoal | bg-dark
+ *   bg-ivory | bg-champagne | bg-charcoal | bg-dark
  *   block--sm
  *
  * @param {string}   className    modifier classes

@@ -4,7 +4,7 @@ import useReveal from '../../hooks/useReveal';
  * PillarBlock — icon + title + rule + body grid of trust pillars.
  *
  * className modifiers:
- *   bg-ivory | bg-champagne | bg-gold | bg-charcoal | bg-dark
+ *   bg-ivory | bg-champagne | bg-charcoal | bg-dark
  *   cols-2 | cols-3 | cols-4
  *   pillars--inline  — icon sits left of the text instead of above
  *   block--sm

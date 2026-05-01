@@ -6,7 +6,7 @@ import ArrowBtn from '../shared/ArrowBtn';
  * CenteredBlock — full-width centered headline + body + optional CTA.
  *
  * className modifiers:
- *   bg-ivory | bg-champagne | bg-gold | bg-charcoal | bg-dark
+ *   bg-ivory | bg-champagne | bg-charcoal | bg-dark
  *   narrow      — max-width 560px
  *   wide        — max-width 960px
  *   block--sm   — reduced vertical padding

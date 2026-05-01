@@ -67,14 +67,15 @@ export default function Nav() {
             {/* ── Bar ────────────────────────────────────────────── */}
             <nav className={navClass}>
                 <div className="nav__inner">
-                    {/* Logo */}
+                    {/* Logo — hanging tag */}
                     <a href="#" className="nav__logo" onClick={drawerOpen ? closeDrawer : undefined}>
-                        <div className="nav__logo-name">
-                            SY Private
-                            <br />
-                            <span className="nav__logo-tagline">Charters</span>
+                        <div className="nav__logo-tag">
+                            <img src="/SYcharters/images/full-logo.svg" className="nav__logo-img" />
                         </div>
                     </a>
+
+                    {/* Spacer reserves the logo's flex slot so links stay right-aligned */}
+                    <div className="nav__logo-spacer" aria-hidden="true" />
 
                     {/* Desktop links */}
                     {!isMobile && (
@@ -107,8 +108,6 @@ export default function Nav() {
                     <div className="drawer__accent-line" />
 
                     <nav>
-                        <div className="drawer__section-label">Navigation</div>
-
                         {LINKS.map((link, i) => (
                             <a key={link} href={`#${link.toLowerCase()}`} className="drawer-link" style={{ "--delay": `${0.1 + i * 0.06}s` }} onClick={closeDrawer}>
                                 {link}

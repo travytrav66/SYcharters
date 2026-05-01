@@ -4,7 +4,7 @@ import useReveal from '../../hooks/useReveal';
  * StatsBlock — a row of large stat numbers with labels.
  *
  * className modifiers:
- *   bg-ivory | bg-champagne | bg-gold | bg-charcoal | bg-dark
+ *   bg-ivory | bg-champagne | bg-charcoal | bg-dark
  *   cols-2 | cols-3 | cols-4
  *   block--sm | block--lg
  *

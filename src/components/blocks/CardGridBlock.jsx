@@ -6,7 +6,7 @@ import Placeholder from '../shared/Placeholder';
  * CardGridBlock — header + grid of icon/title/body cards.
  *
  * className modifiers:
- *   bg-ivory | bg-champagne | bg-gold | bg-charcoal | bg-dark
+ *   bg-ivory | bg-champagne | bg-charcoal | bg-dark
  *   cols-2 | cols-3 | cols-4
  *   block--sm | block--lg
  *

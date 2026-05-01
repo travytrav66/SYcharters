@@ -6,7 +6,7 @@ import NotchedBtn from '../shared/NotchedBtn';
  * ImageGridBlock — image grid with multiple layout variants.
  *
  * className modifiers:
- *   bg-ivory | bg-champagne | bg-gold | bg-charcoal | bg-dark
+ *   bg-ivory | bg-champagne | bg-charcoal | bg-dark
  *   block--sm | block--lg
  *
  * layout variants (controls how many images are used):

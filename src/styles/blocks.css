@@ -3,7 +3,7 @@
    Usage: <SplitBlock className="bg-charcoal flip" ... />
 
    Stack modifier classes on top of the component's base class:
-     Background : bg-ivory | bg-champagne | bg-gold | bg-charcoal | bg-dark
+     Background : bg-ivory | bg-champagne | bg-charcoal | bg-dark
      Padding    : block--sm | block--lg
      Layout     : flip | narrow | wide | align-center
      Grid cols  : cols-2 | cols-3 | cols-4
@@ -42,14 +42,6 @@
   --rule: rgba(181,147,74,0.3);
   --card: var(--ivory);
 }
-.bg-gold {
-  background: var(--gold-light);
-  --bg:   var(--gold-light);
-  --txt:  var(--charcoal);
-  --body: rgba(34,30,24,0.72);
-  --rule: rgba(34,30,24,0.2);
-  --card: rgba(255,255,255,0.38);
-}
 .bg-charcoal {
   background: var(--charcoal);
   --bg:   var(--charcoal);
@@ -66,38 +58,6 @@
   --rule: rgba(181,147,74,0.2);
   --card: rgba(255,255,255,0.04);
 }
-
-/* ── 2b. BG-GOLD ACCENT OVERRIDES ───────────────────────────────
-   Elements that hardcode var(--gold) become invisible on a gold
-   background. Override them to charcoal so accents stay visible.
-   ─────────────────────────────────────────────────────────────── */
-
-/* Eyebrow label */
-.bg-gold .eyebrow { color: var(--charcoal); }
-
-/* GoldLine divider bars + diamond */
-.bg-gold .gold-line__bar { background: var(--charcoal); opacity: 0.22; }
-.bg-gold .gold-line svg  { fill: var(--charcoal); opacity: 0.45; }
-
-/* ArrowBtn arrow + underline */
-.bg-gold .btn                { border-bottom-color: rgba(34,30,24,0.18); }
-.bg-gold .btn:hover          { border-bottom-color: rgba(34,30,24,0.55); }
-.bg-gold .btn__arrow         { color: var(--charcoal); }
-
-/* Split block left-border accent on first point */
-.bg-gold .split__point:first-child { border-left-color: var(--charcoal); }
-
-/* Card icon + rule */
-.bg-gold .card__icon { color: var(--charcoal); }
-.bg-gold .card__rule { background: var(--charcoal); }
-
-/* Stats value + rule */
-.bg-gold .stat__value { color: var(--charcoal); }
-.bg-gold .stat__rule  { background: var(--charcoal); }
-
-/* Pull quote mark + rule */
-.bg-gold .quote__mark { color: var(--charcoal); opacity: 0.25; }
-.bg-gold .quote__rule { background: var(--charcoal); }
 
 /* ── 3. SPLIT BLOCK ─────────────────────────────────────────────
    .split        — two-column grid, text right / image left (default)
@@ -188,11 +148,9 @@
   background: var(--gold);
 }
 .bg-ivory .quote-dot,
-.bg-champagne .quote-dot,
-.bg-gold .quote-dot { background: rgba(34,30,24,0.2); }
+.bg-champagne .quote-dot { background: rgba(34,30,24,0.2); }
 .bg-ivory .quote-dot.active,
-.bg-champagne .quote-dot.active,
-.bg-gold .quote-dot.active { background: var(--gold); }
+.bg-champagne .quote-dot.active { background: var(--gold); }
 
 /* ── 8. MEDIA OVERLAY BLOCK ─────────────────────────────────────
    .align-center (default: left)
@@ -322,12 +280,6 @@
 .block-steps.steps--vertical .step-item__circle {
   flex-shrink: 0;
   margin: 0;
-}
-
-/* bg-gold overrides — circles and text */
-.bg-gold .step-item__circle {
-  color: var(--charcoal);
-  border-color: var(--charcoal);
 }
 
 /* Responsive — horizontal collapses to single column */
@@ -523,10 +475,6 @@
 .block-pillars .pillar__title { color: var(--txt); }
 .block-pillars .pillar__rule  { background: var(--gold); }
 .block-pillars .pillar__body  { color: var(--body); }
-
-/* bg-gold: swap gold accents to charcoal */
-.block-pillars.bg-gold .pillar__icon { color: var(--charcoal); }
-.block-pillars.bg-gold .pillar__rule { background: var(--charcoal); }
 
 /* Text alignment modifier */
 .block-pillars.pillars--center .pillar {

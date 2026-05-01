@@ -167,7 +167,7 @@
    variants: notched-btn--filled-gold | notched-btn--outline-gold | notched-btn--outline-ivory
    ─────────────────────────────────────────────────────────── */
 .notched-btn {
-    --notch: 10px;
+    --notch: 14px;
     display: inline-block;
     cursor: pointer;
     text-decoration: none;
@@ -195,7 +195,7 @@
     position: relative;
 }
 .notched-btn--filled-gold::before {
-    content: '';
+    content: "";
     position: absolute;
     inset: 0;
     background: var(--gold-light);
@@ -204,7 +204,9 @@
     transition: transform 0.38s cubic-bezier(0.4, 0, 0.2, 1);
     z-index: 0;
 }
-.notched-btn--filled-gold:hover::before { transform: scaleX(1); }
+.notched-btn--filled-gold:hover::before {
+    transform: scaleX(1);
+}
 .notched-btn--filled-gold .notched-btn__text {
     position: relative;
     z-index: 1;
@@ -218,7 +220,7 @@
     position: relative;
 }
 .notched-btn--filled-dark::before {
-    content: '';
+    content: "";
     position: absolute;
     inset: 0;
     background: var(--warm-mid);
@@ -227,7 +229,9 @@
     transition: transform 0.38s cubic-bezier(0.4, 0, 0.2, 1);
     z-index: 0;
 }
-.notched-btn--filled-dark:hover::before { transform: scaleX(1); }
+.notched-btn--filled-dark:hover::before {
+    transform: scaleX(1);
+}
 .notched-btn--filled-dark .notched-btn__text {
     position: relative;
     z-index: 1;
@@ -241,7 +245,7 @@
     position: relative;
 }
 .notched-btn--filled-ivory::before {
-    content: '';
+    content: "";
     position: absolute;
     inset: 0;
     background: var(--champagne);
@@ -250,7 +254,9 @@
     transition: transform 0.38s cubic-bezier(0.4, 0, 0.2, 1);
     z-index: 0;
 }
-.notched-btn--filled-ivory:hover::before { transform: scaleX(1); }
+.notched-btn--filled-ivory:hover::before {
+    transform: scaleX(1);
+}
 .notched-btn--filled-ivory .notched-btn__text {
     position: relative;
     z-index: 1;
@@ -296,7 +302,7 @@
 .notched-btn--outline-gold::before,
 .notched-btn--outline-ivory::before,
 .notched-btn--outline-dark::before {
-    content: '';
+    content: "";
     position: absolute;
     inset: 0;
     transform: scaleX(0);
@@ -304,9 +310,15 @@
     transition: transform 0.38s cubic-bezier(0.4, 0, 0.2, 1);
     z-index: 0;
 }
-.notched-btn--outline-gold:hover::before       { transform: scaleX(1); }
-.notched-btn--outline-ivory:hover::before { transform: scaleX(1); }
-.notched-btn--outline-dark:hover::before  { transform: scaleX(1); }
+.notched-btn--outline-gold:hover::before {
+    transform: scaleX(1);
+}
+.notched-btn--outline-ivory:hover::before {
+    transform: scaleX(1);
+}
+.notched-btn--outline-dark:hover::before {
+    transform: scaleX(1);
+}
 
 /* Text */
 .notched-btn--outline-gold .notched-btn__text,
@@ -318,20 +330,44 @@
 }
 
 /* Variant colours */
-.notched-btn--outline-gold        { color: var(--gold); }
-.notched-btn--outline-gold::before { background: var(--gold); }
-.notched-btn--outline-gold .notched-btn__text { color: var(--gold); }
-.notched-btn--outline-gold:hover .notched-btn__text { color: var(--charcoal); }
+.notched-btn--outline-gold {
+    color: var(--gold);
+}
+.notched-btn--outline-gold::before {
+    background: var(--gold);
+}
+.notched-btn--outline-gold .notched-btn__text {
+    color: var(--gold);
+}
+.notched-btn--outline-gold:hover .notched-btn__text {
+    color: var(--charcoal);
+}
 
-.notched-btn--outline-ivory        { color: var(--ivory); }
-.notched-btn--outline-ivory::before { background: var(--ivory); }
-.notched-btn--outline-ivory .notched-btn__text { color: var(--ivory); }
-.notched-btn--outline-ivory:hover .notched-btn__text { color: var(--charcoal); }
+.notched-btn--outline-ivory {
+    color: var(--ivory);
+}
+.notched-btn--outline-ivory::before {
+    background: var(--ivory);
+}
+.notched-btn--outline-ivory .notched-btn__text {
+    color: var(--ivory);
+}
+.notched-btn--outline-ivory:hover .notched-btn__text {
+    color: var(--charcoal);
+}
 
-.notched-btn--outline-dark        { color: var(--charcoal); }
-.notched-btn--outline-dark::before { background: var(--charcoal); }
-.notched-btn--outline-dark .notched-btn__text { color: var(--charcoal); }
-.notched-btn--outline-dark:hover .notched-btn__text { color: var(--ivory); }
+.notched-btn--outline-dark {
+    color: var(--charcoal);
+}
+.notched-btn--outline-dark::before {
+    background: var(--charcoal);
+}
+.notched-btn--outline-dark .notched-btn__text {
+    color: var(--charcoal);
+}
+.notched-btn--outline-dark:hover .notched-btn__text {
+    color: var(--ivory);
+}
 
 /* ── 5. GOLD LINE ────────────────────────────────────────────
    Decorative rule: line — diamond — line
@@ -613,6 +649,7 @@
     position: relative;
     z-index: 2;
     width: 100%;
+    top: 50px;
 }
 .media__eyebrow {
     font-family: var(--sans);
@@ -638,6 +675,7 @@
 }
 .media__body {
     color: rgba(250, 248, 244, 0.72);
+    font-weight: 400;
     margin-bottom: 44px;
     max-width: 640px;
 }
@@ -685,6 +723,9 @@
 .nav.hidden {
     transform: translateY(-100%);
 }
+.nav.hidden .nav__logo {
+    transform: translateY(-60px);
+}
 
 .nav__inner {
     max-width: var(--container);
@@ -701,30 +742,47 @@
 
 .nav__logo {
     text-decoration: none;
-    position: relative;
+    position: absolute;
+    top: 0;
     z-index: 1200;
-}
-.nav__logo-name {
-    font-family: var(--serif);
-    font-size: 20px;
-    font-weight: 400;
-    color: var(--ivory);
-    letter-spacing: 0.04em;
-    line-height: 1.2;
-    transition: color 0.4s ease;
-}
-.nav.scrolled:not(.drawer-open) .nav__logo-name {
-    color: var(--ivory);
+    transition: transform 0.35s ease;
 }
 
-.nav__logo-tagline {
+/* White tag that hangs down from the very top of the page */
+.nav__logo-tag {
+    --notch: 12px;
+    background: #ffffff;
+    padding: 10px 12px;
+    position: relative;
+    clip-path: polygon(0% 0%, 100% 0%, 100% calc(100% - var(--notch)), calc(100% - var(--notch)) 100%, 0% 100%);
+    filter:
+        drop-shadow(0 6px 18px rgba(0, 0, 0, 0.18))
+        drop-shadow(0 2px 6px rgba(0, 0, 0, 0.10));
+}
+
+/* Spacer keeps flex layout balanced now that logo is absolute */
+.nav__logo-spacer {
+    display: none;
+}
+
+.nav__logo-img {
+    height: 75px;
+    width: auto;
     display: block;
-    font-size: 12px;
-    font-family: var(--sans);
-    font-weight: 400;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--gold);
+}
+
+@media (min-width: 1000px) {
+    .nav__logo-tag {
+        --notch: 18px;
+        padding: 14px 18px;
+    }
+    .nav__logo-img {
+        height: 90px;
+    }
+    .nav__logo-spacer {
+        display: block;
+        flex: 0 0 180px;
+    }
 }
 
 .nav__links {
@@ -752,6 +810,7 @@
 
 /* Hamburger */
 .hamburger {
+    margin-left: auto;
     position: relative;
     z-index: 1200;
     background: none;
@@ -1013,7 +1072,7 @@
     position: absolute;
     inset: 0;
     z-index: 1;
-    background: linear-gradient(to right, rgba(34,30,24,0.82) 0%, rgba(34,30,24,0.35) 50%, rgba(34,30,24,0) 75%);
+    background: linear-gradient(to right, rgba(34, 30, 24, 0.82) 0%, rgba(34, 30, 24, 0.35) 50%, rgba(34, 30, 24, 0) 75%);
 }
 .hero__inner {
     position: relative;

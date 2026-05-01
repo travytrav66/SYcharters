@@ -8,7 +8,7 @@ import NotchedBtn from '../shared/NotchedBtn';
  * SplitBlock — two-column text + image layout.
  *
  * className modifiers:
- *   bg-ivory | bg-champagne | bg-gold | bg-charcoal | bg-dark
+ *   bg-ivory | bg-champagne | bg-charcoal | bg-dark
  *   flip        — image moves to the right, text to the left
  *   block--sm   — reduced vertical padding
  *   block--lg   — increased vertical padding

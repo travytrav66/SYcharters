@@ -4,7 +4,7 @@ import useReveal from "../../hooks/useReveal"
  * StepsBlock — numbered steps section.
  *
  * className modifiers:
- *   bg-ivory | bg-champagne | bg-gold | bg-charcoal | bg-dark
+ *   bg-ivory | bg-champagne | bg-charcoal | bg-dark
  *   steps--vertical  — stacked list with vertical connector (default: horizontal 3-col)
  *   block--sm | block--lg
  *

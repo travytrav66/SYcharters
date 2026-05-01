@@ -106,7 +106,6 @@ function cls(values) {
 const BG_OPTIONS = [
     { value: "bg-ivory", label: "Ivory" },
     { value: "bg-champagne", label: "Champagne" },
-    { value: "bg-gold", label: "Gold" },
     { value: "bg-charcoal", label: "Charcoal" },
 ]
 
@@ -226,7 +225,7 @@ function DesignSystem() {
             <div style={{ ...DS_SECTION }}>
                 <div style={DS_LABEL}>Section Backgrounds</div>
                 <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(180px, 1fr))", gap: "12px" }}>
-                    {["bg-ivory", "bg-champagne", "bg-gold", "bg-charcoal"].map((cls) => (
+                    {["bg-ivory", "bg-champagne", "bg-charcoal"].map((cls) => (
                         <div key={cls}>
                             <div className={cls} style={{ height: "56px", borderRadius: "2px", border: cls === "bg-ivory" || cls === "bg-champagne" ? "1px solid rgba(0,0,0,0.07)" : "none", display: "flex", alignItems: "center", justifyContent: "center" }}>
                                 <span style={{ fontFamily: '"DM Sans", sans-serif', fontSize: "10px", letterSpacing: "0.1em", textTransform: "uppercase", color: cls === "bg-charcoal" ? "rgba(250,248,244,0.4)" : "rgba(34,30,24,0.4)" }}>Aa</span>

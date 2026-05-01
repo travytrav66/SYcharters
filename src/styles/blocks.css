@@ -13,11 +13,15 @@
 /* .block extends .section — sets vertical padding only.
    All horizontal padding comes from an inner .container div.   */
 .block {
-  padding: var(--section-v) 0;
-  position: relative;
+    padding: var(--section-v) 0;
+    position: relative;
 }
-.block--sm { --section-v: clamp(3rem, 6vw,  5rem); }
-.block--lg { --section-v: clamp(7rem, 14vw, 12rem); }
+.block--sm {
+    --section-v: clamp(3rem, 6vw, 5rem);
+}
+.block--lg {
+    --section-v: clamp(7rem, 14vw, 12rem);
+}
 
 /* ── 2. BACKGROUND + THEME VARIABLES ────────────────────────────
    Every bg-* class sets four CSS vars consumed by block internals:
@@ -27,36 +31,36 @@
      --card  card surface colour
    ─────────────────────────────────────────────────────────────── */
 .bg-ivory {
-  background: var(--ivory);
-  --bg:   var(--ivory);
-  --txt:  var(--charcoal);
-  --body: var(--warm-mid);
-  --rule: rgba(181,147,74,0.3);
-  --card: var(--champagne);
+    background: var(--ivory);
+    --bg: var(--ivory);
+    --txt: var(--charcoal);
+    --body: var(--warm-mid);
+    --rule: rgba(181, 147, 74, 0.3);
+    --card: var(--champagne);
 }
 .bg-champagne {
-  background: var(--champagne);
-  --bg:   var(--champagne);
-  --txt:  var(--charcoal);
-  --body: var(--warm-mid);
-  --rule: rgba(181,147,74,0.3);
-  --card: var(--ivory);
+    background: var(--champagne);
+    --bg: var(--champagne);
+    --txt: var(--charcoal);
+    --body: var(--warm-mid);
+    --rule: rgba(181, 147, 74, 0.3);
+    --card: var(--ivory);
 }
 .bg-charcoal {
-  background: var(--charcoal);
-  --bg:   var(--charcoal);
-  --txt:  var(--ivory);
-  --body: rgba(250,248,244,0.58);
-  --rule: rgba(181,147,74,0.3);
-  --card: rgba(255,255,255,0.05);
+    background: var(--charcoal);
+    --bg: var(--charcoal);
+    --txt: var(--ivory);
+    --body: rgba(250, 248, 244, 0.58);
+    --rule: rgba(181, 147, 74, 0.3);
+    --card: rgba(255, 255, 255, 0.05);
 }
 .bg-dark {
-  background: #1A1710;
-  --bg:   #1A1710;
-  --txt:  var(--ivory);
-  --body: rgba(250,248,244,0.45);
-  --rule: rgba(181,147,74,0.2);
-  --card: rgba(255,255,255,0.04);
+    background: #1a1710;
+    --bg: #1a1710;
+    --txt: var(--ivory);
+    --body: rgba(250, 248, 244, 0.45);
+    --rule: rgba(181, 147, 74, 0.2);
+    --card: rgba(255, 255, 255, 0.04);
 }
 
 /* ── 3. SPLIT BLOCK ─────────────────────────────────────────────
@@ -64,16 +68,24 @@
    .flip         — reverses column order (text left / image right)
    ─────────────────────────────────────────────────────────────── */
 .block-split .split__inner {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: clamp(48px, 8vw, 100px);
-  align-items: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(48px, 8vw, 100px);
+    align-items: center;
 }
-.block-split .split__text  { order: 2; }
-.block-split .split__media { order: 1; }
+.block-split .split__text {
+    order: 2;
+}
+.block-split .split__media {
+    order: 1;
+}
 
-.block-split.flip .split__text  { order: 1; }
-.block-split.flip .split__media { order: 2; }
+.block-split.flip .split__text {
+    order: 1;
+}
+.block-split.flip .split__media {
+    order: 2;
+}
 
 /* ── 4. CENTERED BLOCK ──────────────────────────────────────────
    .narrow  — max-width 560px
@@ -81,105 +93,129 @@
    (default — max-width 720px)
    ─────────────────────────────────────────────────────────────── */
 .block-centered .centered__inner {
-  max-width: 720px;
-  margin: 0 auto;
-  text-align: center;
+    max-width: 720px;
+    margin: 0 auto;
+    text-align: center;
 }
-.block-centered.narrow .centered__inner { max-width: 560px; }
-.block-centered.wide   .centered__inner { max-width: 960px; }
+.block-centered.narrow .centered__inner {
+    max-width: 560px;
+}
+.block-centered.wide .centered__inner {
+    max-width: 960px;
+}
 
 /* ── 5. CARD GRID BLOCK ─────────────────────────────────────────
    .cols-2 | .cols-3 | .cols-4
    ─────────────────────────────────────────────────────────────── */
 .block-cards .cards__grid {
-  display: grid;
-  gap: 2px;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    display: grid;
+    gap: 2px;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
 }
-.block-cards.cols-2 .cards__grid { grid-template-columns: repeat(2, 1fr); }
-.block-cards.cols-3 .cards__grid { grid-template-columns: repeat(3, 1fr); }
-.block-cards.cols-4 .cards__grid { grid-template-columns: repeat(4, 1fr); }
+.block-cards.cols-2 .cards__grid {
+    grid-template-columns: repeat(2, 1fr);
+}
+.block-cards.cols-3 .cards__grid {
+    grid-template-columns: repeat(3, 1fr);
+}
+.block-cards.cols-4 .cards__grid {
+    grid-template-columns: repeat(4, 1fr);
+}
 
 /* ── 6. STATS BLOCK ─────────────────────────────────────────────
    .cols-2 | .cols-3 | .cols-4
    ─────────────────────────────────────────────────────────────── */
 .block-stats .stats__grid {
-  display: grid;
-  gap: 2px;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    display: grid;
+    gap: 2px;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
 }
-.block-stats.cols-2 .stats__grid { grid-template-columns: repeat(2, 1fr); }
-.block-stats.cols-3 .stats__grid { grid-template-columns: repeat(3, 1fr); }
-.block-stats.cols-4 .stats__grid { grid-template-columns: repeat(4, 1fr); }
+.block-stats.cols-2 .stats__grid {
+    grid-template-columns: repeat(2, 1fr);
+}
+.block-stats.cols-3 .stats__grid {
+    grid-template-columns: repeat(3, 1fr);
+}
+.block-stats.cols-4 .stats__grid {
+    grid-template-columns: repeat(4, 1fr);
+}
 
 /* ── 7. PULL QUOTE BLOCK ────────────────────────────────────────
    No layout modifiers — always centered.
    Pass multiple quotes to enable the dot-navigation slider.
    ─────────────────────────────────────────────────────────────── */
 .block-quote .quote__inner {
-  max-width: 780px;
-  margin: 0 auto;
-  text-align: center;
+    max-width: 780px;
+    margin: 0 auto;
+    text-align: center;
 }
 
 /* Slider: show only the active slide */
-.block-quote .quote__slide          { display: none; }
-.block-quote .quote__slide.active   { display: block; }
+.block-quote .quote__slide {
+    display: none;
+}
+.block-quote .quote__slide.active {
+    display: block;
+}
 
 /* Dot navigation */
 .quote-dots {
-  display: flex;
-  gap: 10px;
-  justify-content: center;
-  margin-top: 48px;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 48px;
 }
 .quote-dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 999px;
-  border: none;
-  cursor: pointer;
-  background: rgba(250,248,244,0.25);
-  padding: 0;
-  transition: all 0.3s ease;
+    width: 8px;
+    height: 8px;
+    border-radius: 999px;
+    border: none;
+    cursor: pointer;
+    background: rgba(250, 248, 244, 0.25);
+    padding: 0;
+    transition: all 0.3s ease;
 }
 .quote-dot.active {
-  width: 28px;
-  background: var(--gold);
+    width: 28px;
+    background: var(--gold);
 }
 .bg-ivory .quote-dot,
-.bg-champagne .quote-dot { background: rgba(34,30,24,0.2); }
+.bg-champagne .quote-dot {
+    background: rgba(34, 30, 24, 0.2);
+}
 .bg-ivory .quote-dot.active,
-.bg-champagne .quote-dot.active { background: var(--gold); }
+.bg-champagne .quote-dot.active {
+    background: var(--gold);
+}
 
 /* ── 8. MEDIA OVERLAY BLOCK ─────────────────────────────────────
    .align-center (default: left)
    Content sits over a full-section background image/placeholder
    ─────────────────────────────────────────────────────────────── */
 .block-media {
-  min-height: 600px;
-  display: flex;
-  align-items: center;
-  padding: 0;
+    min-height: 600px;
+    display: flex;
+    align-items: center;
+    padding: 0;
 }
 .block-media .media__content {
-  position: relative;
-  z-index: 2;
-  padding: var(--section-v) 0;
-  width: 100%;
-  max-width: var(--container-sm);
+    position: relative;
+    z-index: 2;
+    padding: var(--section-v) 0;
+    width: 100%;
+    max-width: var(--container-sm);
 }
 .block-media.align-center .media__content {
-  max-width: 780px;
-  margin: 0 auto;
-  text-align: center;
+    max-width: 780px;
+    margin: 0 auto;
+    text-align: center;
 }
 
 .block-media.narrow .media__content {
-  max-width: 600px;
+    max-width: 600px;
 }
 .block-media.block-media--full {
-  min-height: 100dvh;
+    min-height: 100dvh;
 }
 
 /* ── 8b. PLACEHOLDER SIZING IN BLOCKS ──────────────────────────
@@ -187,8 +223,8 @@
    The > selector ensures mosaic img-grid items (which use height:100%)
    are not overridden by this rule.                               */
 .block-split .split__media > .img-placeholder {
-  width: 100%;
-  height: var(--split-img-h, 700px);
+    width: 100%;
+    height: var(--split-img-h, 700px);
 }
 
 /* ── 9. STEPS BLOCK ─────────────────────────────────────────────
@@ -197,100 +233,100 @@
    ─────────────────────────────────────────────────────────────── */
 
 .block-steps .block-hd {
-  margin-bottom: 96px;
+    margin-bottom: 96px;
 }
 
 /* Horizontal layout */
 .block-steps .steps-grid {
-  display: grid;
-  grid-template-columns: repeat(var(--steps-n, 3), 1fr);
-  gap: 0 4vw;
-  position: relative;
+    display: grid;
+    grid-template-columns: repeat(var(--steps-n, 3), 1fr);
+    gap: 0 4vw;
+    position: relative;
 }
 .block-steps .steps-grid__connector {
-  position: absolute;
-  top: 27px; /* centre of 56px circle */
-  /* centres on first/last circle for any step count */
-  left: calc(50% / var(--steps-n, 3));
-  right: calc(50% / var(--steps-n, 3));
-  height: 1px;
-  background: var(--rule);
-  opacity: 0.35;
+    position: absolute;
+    top: 27px; /* centre of 56px circle */
+    /* centres on first/last circle for any step count */
+    left: calc(50% / var(--steps-n, 3));
+    right: calc(50% / var(--steps-n, 3));
+    height: 1px;
+    background: var(--rule);
+    opacity: 0.35;
 }
 .block-steps .step-item {
-  text-align: center;
-  padding: 0 16px;
+    text-align: center;
+    padding: 0 16px;
 }
 .block-steps .step-item__circle {
-  width: 56px;
-  height: 56px;
-  border-radius: 50%;
-  border: 1px solid var(--gold);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto 28px;
-  font-family: var(--serif);
-  font-size: 15px;
-  color: var(--gold);
-  font-weight: 400;
-  letter-spacing: 0.05em;
-  background: var(--bg, var(--ivory));
-  position: relative;
-  z-index: 1;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    border: 1px solid var(--gold);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 28px;
+    font-family: var(--serif);
+    font-size: 15px;
+    color: var(--gold);
+    font-weight: 400;
+    letter-spacing: 0.05em;
+    background: var(--bg, var(--ivory));
+    position: relative;
+    z-index: 1;
 }
 .block-steps .step-item__title {
-  font-family: var(--serif);
-  font-size: 22px;
-  font-weight: 400;
-  color: var(--txt);
-  margin-bottom: 12px;
+    font-family: var(--serif);
+    font-size: 22px;
+    font-weight: 400;
+    color: var(--txt);
+    margin-bottom: 12px;
 }
 .block-steps .step-item__text {
-  color: var(--body);
+    color: var(--body);
 }
 
 /* Vertical layout */
 .block-steps.steps--vertical .steps-grid {
-  display: flex;
-  flex-direction: column;
-  gap: 0;
-  max-width: 640px;
-  margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    max-width: 640px;
+    margin: 0 auto;
 }
 .block-steps.steps--vertical .steps-grid__connector {
-  position: absolute;
-  top: 28px;
-  bottom: 28px;
-  left: 27px; /* centre of 56px circle */
-  right: auto;
-  width: 1px;
-  height: auto;
+    position: absolute;
+    top: 28px;
+    bottom: 28px;
+    left: 27px; /* centre of 56px circle */
+    right: auto;
+    width: 1px;
+    height: auto;
 }
 .block-steps.steps--vertical .step-item {
-  display: flex;
-  gap: 36px;
-  align-items: flex-start;
-  text-align: left;
-  padding: 0 0 48px 0;
+    display: flex;
+    gap: 36px;
+    align-items: flex-start;
+    text-align: left;
+    padding: 0 0 48px 0;
 }
 .block-steps.steps--vertical .step-item:last-child {
-  padding-bottom: 0;
+    padding-bottom: 0;
 }
 .block-steps.steps--vertical .step-item__circle {
-  flex-shrink: 0;
-  margin: 0;
+    flex-shrink: 0;
+    margin: 0;
 }
 
 /* Responsive — horizontal collapses to single column */
 @media (max-width: 640px) {
-  .block-steps .steps-grid {
-    grid-template-columns: 1fr;
-    gap: 40px;
-  }
-  .block-steps .steps-grid__connector {
-    display: none;
-  }
+    .block-steps .steps-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    .block-steps .steps-grid__connector {
+        display: none;
+    }
 }
 
 /* ── 11. IMAGE GRID BLOCK ───────────────────────────────────────
@@ -300,148 +336,191 @@
 
 /* Shared item styles */
 .img-grid {
-  gap: 4px;
+    gap: 4px;
 }
 .img-grid__item {
-  overflow: hidden;
-  position: relative;
+    overflow: hidden;
+    position: relative;
 }
 .img-grid__img {
-  height: 100%;
-  width: 100%;
-  display: block;
+    height: 100%;
+    width: 100%;
+    display: block;
 }
 .img-grid__item:hover .img-grid__img {
-  transform: scale(1.04);
-  transition: transform 0.6s ease;
+    transform: scale(1.04);
+    transition: transform 0.6s ease;
 }
 .img-grid__overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(34,30,24,0);
-  transition: background 0.4s ease;
-  pointer-events: none;
+    position: absolute;
+    inset: 0;
+    background: rgba(34, 30, 24, 0);
+    transition: background 0.4s ease;
+    pointer-events: none;
 }
 .img-grid__item:hover .img-grid__overlay {
-  background: rgba(34,30,24,0.22);
+    background: rgba(34, 30, 24, 0.22);
 }
 
 /* ── Mosaic: 3-col, item 3 spans both rows (like Visual Gallery) */
 .img-grid--mosaic {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: 340px 260px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 340px 260px;
 }
-.img-grid--mosaic .img-grid__item:nth-child(1) { grid-column: 1; grid-row: 1; }
-.img-grid--mosaic .img-grid__item:nth-child(2) { grid-column: 2; grid-row: 1; }
-.img-grid--mosaic .img-grid__item:nth-child(3) { grid-column: 3; grid-row: 1 / span 2; }
-.img-grid--mosaic .img-grid__item:nth-child(4) { grid-column: 1; grid-row: 2; }
-.img-grid--mosaic .img-grid__item:nth-child(5) { grid-column: 2; grid-row: 2; }
+.img-grid--mosaic .img-grid__item:nth-child(1) {
+    grid-column: 1;
+    grid-row: 1;
+}
+.img-grid--mosaic .img-grid__item:nth-child(2) {
+    grid-column: 2;
+    grid-row: 1;
+}
+.img-grid--mosaic .img-grid__item:nth-child(3) {
+    grid-column: 3;
+    grid-row: 1 / span 2;
+}
+.img-grid--mosaic .img-grid__item:nth-child(4) {
+    grid-column: 1;
+    grid-row: 2;
+}
+.img-grid--mosaic .img-grid__item:nth-child(5) {
+    grid-column: 2;
+    grid-row: 2;
+}
 
 /* ── Top + Row: wide top image, 2 equal below (like The Experience) */
 .img-grid--top-row {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 360px 240px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 360px 240px;
 }
-.img-grid--top-row .img-grid__item:nth-child(1) { grid-column: 1 / -1; }
+.img-grid--top-row .img-grid__item:nth-child(1) {
+    grid-column: 1 / -1;
+}
 
 /* ── Equal 3: three equal columns */
 .img-grid--equal-3 {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: 340px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 340px;
 }
 
 /* ── Feature Left: one tall image left, 2 stacked right */
 .img-grid--feature-left {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 240px 240px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 240px 240px;
 }
-.img-grid--feature-left .img-grid__item:nth-child(1) { grid-column: 1; grid-row: 1 / span 2; }
-.img-grid--feature-left .img-grid__item:nth-child(2) { grid-column: 2; grid-row: 1; }
-.img-grid--feature-left .img-grid__item:nth-child(3) { grid-column: 2; grid-row: 2; }
+.img-grid--feature-left .img-grid__item:nth-child(1) {
+    grid-column: 1;
+    grid-row: 1 / span 2;
+}
+.img-grid--feature-left .img-grid__item:nth-child(2) {
+    grid-column: 2;
+    grid-row: 1;
+}
+.img-grid--feature-left .img-grid__item:nth-child(3) {
+    grid-column: 2;
+    grid-row: 2;
+}
 
 /* ── Feature Right: 2 stacked left, one tall image right */
 .img-grid--feature-right {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 240px 240px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 240px 240px;
 }
-.img-grid--feature-right .img-grid__item:nth-child(1) { grid-column: 1; grid-row: 1; }
-.img-grid--feature-right .img-grid__item:nth-child(2) { grid-column: 1; grid-row: 2; }
-.img-grid--feature-right .img-grid__item:nth-child(3) { grid-column: 2; grid-row: 1 / span 2; }
+.img-grid--feature-right .img-grid__item:nth-child(1) {
+    grid-column: 1;
+    grid-row: 1;
+}
+.img-grid--feature-right .img-grid__item:nth-child(2) {
+    grid-column: 1;
+    grid-row: 2;
+}
+.img-grid--feature-right .img-grid__item:nth-child(3) {
+    grid-column: 2;
+    grid-row: 1 / span 2;
+}
 
 /* ── 2×2: four equal images */
 .img-grid--2x2 {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 300px 300px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 300px 300px;
 }
 
 /* ── Panoramic: wide top image, 3 equal below */
 .img-grid--panoramic {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: 380px 240px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 380px 240px;
 }
-.img-grid--panoramic .img-grid__item:nth-child(1) { grid-column: 1 / -1; }
+.img-grid--panoramic .img-grid__item:nth-child(1) {
+    grid-column: 1 / -1;
+}
 
 /* Responsive — all layouts stack to 1 or 2 col on mobile */
 @media (max-width: 640px) {
-  .img-grid--mosaic,
-  .img-grid--equal-3,
-  .img-grid--panoramic {
-    grid-template-columns: 1fr;
-    grid-template-rows: none;
-  }
-  .img-grid--mosaic .img-grid__item,
-  .img-grid--equal-3 .img-grid__item,
-  .img-grid--panoramic .img-grid__item {
-    grid-column: auto;
-    grid-row: auto;
-  }
-  .img-grid--mosaic .img-grid__img,
-  .img-grid--equal-3 .img-grid__img,
-  .img-grid--panoramic .img-grid__img { min-height: 220px; }
+    .img-grid--mosaic,
+    .img-grid--equal-3,
+    .img-grid--panoramic {
+        grid-template-columns: 1fr;
+        grid-template-rows: none;
+    }
+    .img-grid--mosaic .img-grid__item,
+    .img-grid--equal-3 .img-grid__item,
+    .img-grid--panoramic .img-grid__item {
+        grid-column: auto;
+        grid-row: auto;
+    }
+    .img-grid--mosaic .img-grid__img,
+    .img-grid--equal-3 .img-grid__img,
+    .img-grid--panoramic .img-grid__img {
+        min-height: 220px;
+    }
 
-  .img-grid--top-row,
-  .img-grid--feature-left,
-  .img-grid--feature-right,
-  .img-grid--2x2 {
-    grid-template-columns: 1fr;
-    grid-template-rows: none;
-  }
-  .img-grid--top-row .img-grid__item,
-  .img-grid--feature-left .img-grid__item,
-  .img-grid--feature-right .img-grid__item,
-  .img-grid--2x2 .img-grid__item {
-    grid-column: auto;
-    grid-row: auto;
-  }
-  .img-grid--top-row .img-grid__img,
-  .img-grid--feature-left .img-grid__img,
-  .img-grid--feature-right .img-grid__img,
-  .img-grid--2x2 .img-grid__img { min-height: 220px; }
+    .img-grid--top-row,
+    .img-grid--feature-left,
+    .img-grid--feature-right,
+    .img-grid--2x2 {
+        grid-template-columns: 1fr;
+        grid-template-rows: none;
+    }
+    .img-grid--top-row .img-grid__item,
+    .img-grid--feature-left .img-grid__item,
+    .img-grid--feature-right .img-grid__item,
+    .img-grid--2x2 .img-grid__item {
+        grid-column: auto;
+        grid-row: auto;
+    }
+    .img-grid--top-row .img-grid__img,
+    .img-grid--feature-left .img-grid__img,
+    .img-grid--feature-right .img-grid__img,
+    .img-grid--2x2 .img-grid__img {
+        min-height: 220px;
+    }
 }
 
 /* ── 12. MULTI-BUTTON ROW ────────────────────────────────────────
    Shared flex wrapper used by any block that renders 2+ CTAs.     */
 .btns {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 28px;
-  align-items: center;
-  margin-top: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    align-items: center;
+    margin-top: 40px;
 }
-.block-centered .btns { justify-content: center; }
+.block-centered .btns {
+    justify-content: center;
+}
 @media (max-width: 640px) {
-  .btns {
-    flex-direction: column;
-    align-items: stretch;
-    gap: 16px;
-  }
+    .btns {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 16px;
+    }
 }
 
 /* ── 14. CTA BLOCK ──────────────────────────────────────────────
@@ -449,12 +528,12 @@
    Reuses .cta__*, .contact-form__* from components.css.
    ─────────────────────────────────────────────────────────────── */
 .block-cta {
-  position: relative;
-  overflow: hidden;
+    position: relative;
+    overflow: hidden;
 }
 .block-cta__container {
-  position: relative;
-  z-index: 1;
+    position: relative;
+    z-index: 1;
 }
 
 /* ── 13. PILLAR BLOCK ────────────────────────────────────────────
@@ -462,56 +541,81 @@
    .pillars--inline  — icon sits left of text instead of above
    ─────────────────────────────────────────────────────────────── */
 .block-pillars .pillars__grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 48px 40px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 48px 40px;
 }
-.block-pillars.cols-2 .pillars__grid { grid-template-columns: repeat(2, 1fr); }
-.block-pillars.cols-3 .pillars__grid { grid-template-columns: repeat(3, 1fr); }
-.block-pillars.cols-4 .pillars__grid { grid-template-columns: repeat(4, 1fr); }
+@media (min-width: 640px) {
+    .block-pillars.cols-2 .pillars__grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .block-pillars.cols-3 .pillars__grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .block-pillars.cols-4 .pillars__grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media (min-width: 1000px) {
+    .block-pillars.cols-4 .pillars__grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
 
 /* Override hardcoded colors from components.css with theme-aware vars */
-.block-pillars .pillar__icon  { color: var(--gold); }
-.block-pillars .pillar__title { color: var(--txt); }
-.block-pillars .pillar__rule  { background: var(--gold); }
-.block-pillars .pillar__body  { color: var(--body); }
+.block-pillars .pillar__icon {
+    color: var(--gold);
+}
+.block-pillars .pillar__title {
+    color: var(--txt);
+}
+.block-pillars .pillar__rule {
+    background: var(--gold);
+}
+.block-pillars .pillar__body {
+    color: var(--body);
+}
 
 /* Text alignment modifier */
 .block-pillars.pillars--center .pillar {
-  text-align: center;
+    text-align: center;
 }
 .block-pillars.pillars--center .pillar__icon {
-  display: flex;
-  justify-content: center;
+    display: flex;
+    justify-content: center;
 }
 .block-pillars.pillars--center .pillar__rule {
-  margin-left: auto;
-  margin-right: auto;
+    margin-left: auto;
+    margin-right: auto;
 }
-
 
 /* ── 10. RESPONSIVE ──────────────────────────────────────────────  */
 @media (max-width: 900px) {
-  .block-split .split__inner {
-    grid-template-columns: 1fr;
-    gap: 48px;
-  }
-  .block-split .split__text,
-  .block-split .split__media,
-  .block-split.flip .split__text,
-  .block-split.flip .split__media {
-    order: unset;
-  }
+    .block-split .split__inner {
+        grid-template-columns: 1fr;
+        gap: 48px;
+    }
+    .block-split .split__text,
+    .block-split .split__media,
+    .block-split.flip .split__text,
+    .block-split.flip .split__media {
+        order: unset;
+    }
 
-  .block-cards.cols-4 .cards__grid { grid-template-columns: repeat(2, 1fr); }
-  .block-stats.cols-4 .stats__grid { grid-template-columns: repeat(2, 1fr); }
-  .block-pillars.cols-4 .pillars__grid { grid-template-columns: repeat(2, 1fr); }
+    .block-cards.cols-4 .cards__grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .block-stats.cols-4 .stats__grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
 @media (max-width: 600px) {
-  .block-cards.cols-2 .cards__grid,
-  .block-cards.cols-3 .cards__grid { grid-template-columns: 1fr; }
-  .block-stats .stats__grid { grid-template-columns: repeat(2, 1fr); }
-  .block-pillars.cols-2 .pillars__grid,
-  .block-pillars.cols-3 .pillars__grid { grid-template-columns: 1fr; }
+    .block-cards.cols-2 .cards__grid,
+    .block-cards.cols-3 .cards__grid {
+        grid-template-columns: 1fr;
+    }
+    .block-stats .stats__grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
